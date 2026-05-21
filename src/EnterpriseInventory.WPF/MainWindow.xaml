@@ -1,12 +1,57 @@
-﻿<Window x:Class="Enterprise_Inventory.MainWindow"
+﻿<Window x:Class="EnterpriseInventory.WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Enterprise_Inventory"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:views="clr-namespace:EnterpriseInventory.WPF.Views"
+        Title="Enterprise Inventory"
+        Height="720"
+        Width="1280"
+        WindowStartupLocation="CenterScreen">
+
     <Grid>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <Border Background="#1E293B">
+
+            <StackPanel Margin="20">
+
+                <TextBlock Text="Enterprise ERP"
+                           Foreground="White"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Margin="0 0 0 40"/>
+
+                <Button Content="Dashboard"
+                        Height="45"
+                        Margin="0 0 0 10"/>
+
+                <Button Content="Products"
+                        Height="45"
+                        Margin="0 0 0 10"/>
+
+                <Button Content="Sales"
+                        Height="45"
+                        Margin="0 0 0 10"/>
+
+                <Button Content="Reports"
+                        Height="45"
+                        Margin="0 0 0 10"/>
+
+            </StackPanel>
+
+        </Border>
+
+        <!-- Main Content -->
+        <Grid Grid.Column="1">
+
+            <views:DashboardView/>
+
+        </Grid>
+
     </Grid>
+
 </Window>
