@@ -27,19 +27,23 @@
 
                 <Button Content="Dashboard"
                         Height="45"
-                        Margin="0 0 0 10"/>
+                        Margin="0 0 0 10"
+                        Command="{Binding ShowDashboardCommand}"/>
 
                 <Button Content="Products"
                         Height="45"
-                        Margin="0 0 0 10"/>
+                        Margin="0 0 0 10"
+                        Command="{Binding ShowProductsCommand}"/>
 
                 <Button Content="Sales"
                         Height="45"
-                        Margin="0 0 0 10"/>
+                        Margin="0 0 0 10"
+                        Command="{Binding ShowSalesCommand}"/>
 
                 <Button Content="Reports"
                         Height="45"
-                        Margin="0 0 0 10"/>
+                        Margin="0 0 0 10"
+                        Command="{Binding ShowLoginCommand}"/>
 
             </StackPanel>
 
@@ -47,9 +51,11 @@
 
         <!-- Main Content -->
         <Grid Grid.Column="1">
-
-            <views:DashboardView/>
-
+            <!--
+                <views:DashboardView/>
+            -->
+            <ContentControl Content="{Binding CurrentView}" />
+            
         </Grid>
 
     </Grid>
