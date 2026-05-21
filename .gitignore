@@ -1,0 +1,41 @@
+# Build
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test Results
+TestResults/
+
+# Coverage
+coverage/
+*.coverage
+
+# Publish
+publish/
+
+# Secrets
+appsettings.Development.json
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
