@@ -33,6 +33,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\LogoutView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserManagement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ReportsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -45,6 +54,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Views\LogoutView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ReportsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\LoginView.xaml">
       <SubType>Designer</SubType>
     </Page>

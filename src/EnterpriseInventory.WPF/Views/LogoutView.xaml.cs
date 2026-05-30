@@ -1,5 +1,4 @@
-﻿using EnterpriseInventory.WPF.Infrastructure;
-using EnterpriseInventory.WPF.ViewModels;
+﻿using EnterpriseInventory.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,16 +16,14 @@ using System.Windows.Shapes;
 namespace EnterpriseInventory.WPF.Views
 {
     /// <summary>
-    /// Interaction logic for DashboardView.xaml
+    /// Interaction logic for LoginView.xaml
     /// </summary>
-    //public partial class ProductsView : UserControl
-    public partial class ProductsView : Page
+    public partial class LogoutView : UserControl
     {
-        public ProductsView()
+        public LogoutView()
         {
             InitializeComponent();
-            DataContext = new ProductsViewModel(
-                    new AppDbContext());
+            DataContext = new LoginViewModel();
         }
     }
 }

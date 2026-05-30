@@ -43,7 +43,19 @@
                 <Button Content="Reports"
                         Height="45"
                         Margin="0 0 0 10"
-                        Command="{Binding ShowLoginCommand}"/>
+                        Command="{Binding ShowReportsCommand}"/>
+                
+                <Button Content="Add User"
+                        Height="45"
+                        Margin="0 0 0 10"
+                        Command="{Binding ShowUserManagementCommand}"/>
+
+                <Button Content="Logout"
+                    Height="45"
+                    Margin="0,40,0,0"
+                    Command="{Binding LogoutCommand}"
+                    Background="#DC3545"
+                    Foreground="White"/>
 
             </StackPanel>
 

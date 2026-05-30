@@ -10,6 +10,9 @@ namespace EnterpriseInventory.WPF.Services.Auth;
 
 public class AuthService: IAuthService
 {
+
+    private readonly AppDbContext _context;
+    public User? CurrentUser { get; private set; }
     //Later replace with DB(EF Core)
     private List<User> _users = new()
     {
@@ -22,7 +25,12 @@ public class AuthService: IAuthService
         using var db = new AppDbContext();
         //return _users.FirstOrDefault(x =>
         //x.Username == username && x.Password == password);
-        return db.Users.FirstOrDefault(x => x.Username == username && x.Password == password);
+        return db.Users.FirstOrDefault(x => x.Username == username && x.Password == password && x.IsActive);
+    }
+
+    public void Logout()
+    {
+        CurrentUser = null;
     }
 
 }

@@ -2,6 +2,7 @@
 using EnterpriseInventory.WPF.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.Windows;
 
 namespace EnterpriseInventory.WPF.ViewModels;
 
@@ -20,6 +21,18 @@ public partial class MainViewModel : ObservableObject
         //default page
         CurrentView = new DashboardView();
     }
+    [RelayCommand]
+    private void Logout()
+    {
+        
+        var loginWindow = new LogoutView();
+        //if (Application.Current.MainWindow) == main{
+        //    main.Close();
+        //}
+        CurrentView = loginWindow;
+        Application.Current.MainWindow?.Close();
+        
+    }
 
     [RelayCommand]
     private void ShowDashboard()
@@ -36,5 +49,15 @@ public partial class MainViewModel : ObservableObject
     {
         CurrentView = new SalesView();
     }
-    
+
+    [RelayCommand]
+    private void ShowReports()
+    {
+        CurrentView = new ReportsView();
+    }
+    [RelayCommand]
+    private void ShowUserManagement()
+    {
+        CurrentView = new UserManagement();
+    }
 }

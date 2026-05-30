@@ -1,6 +1,4 @@
-﻿using EnterpriseInventory.WPF.Infrastructure;
-using EnterpriseInventory.WPF.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +17,11 @@ namespace EnterpriseInventory.WPF.Views
     /// <summary>
     /// Interaction logic for DashboardView.xaml
     /// </summary>
-    //public partial class ProductsView : UserControl
-    public partial class ProductsView : Page
+    public partial class ReportsView : UserControl
     {
-        public ProductsView()
+        public ReportsView()
         {
             InitializeComponent();
-            DataContext = new ProductsViewModel(
-                    new AppDbContext());
         }
     }
 }
