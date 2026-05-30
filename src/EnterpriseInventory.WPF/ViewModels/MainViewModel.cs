@@ -14,6 +14,9 @@ public partial class MainViewModel : ObservableObject
 
     [ObservableProperty]
     private object currentView;
+
+    [ObservableProperty]
+    private bool isLoggedIn = true;
     public MainViewModel()
     {
         NavigationService = new NavigationService();
@@ -24,15 +27,22 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     private void Logout()
     {
-        
-        var loginWindow = new LogoutView();
-        //if (Application.Current.MainWindow) == main{
-        //    main.Close();
-        //}
-        CurrentView = loginWindow;
-        Application.Current.MainWindow?.Close();
-        
+        IsLoggedIn = false;
+
+        CurrentView = new LogoutView();
     }
+    //[RelayCommand]
+    //private void Logout()
+    //{
+
+    //    var loginWindow = new LogoutView();
+    //    //if (Application.Current.MainWindow) == main{
+    //    //    main.Close();
+    //    //}
+    //    CurrentView = loginWindow;
+    //    Application.Current.MainWindow?.Close();
+
+    //}
 
     [RelayCommand]
     private void ShowDashboard()

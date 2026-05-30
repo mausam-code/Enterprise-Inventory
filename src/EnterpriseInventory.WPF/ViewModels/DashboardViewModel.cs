@@ -7,81 +7,28 @@ using System.Linq;
 
 namespace EnterpriseInventory.WPF.ViewModels;
 
-public partial class UserManagementViewModel : ObservableObject
+public partial class DashboardViewModel : ObservableObject
 {
-    [ObservableProperty]
-    private ObservableCollection<User> users = new();
 
     [ObservableProperty]
-    private User? selectedUser;
+    private int totalProducts;
 
     [ObservableProperty]
-    private string newUsername = "";
+    private int totalUsers;
 
     [ObservableProperty]
-    private string newPassword = "";
-
-    [ObservableProperty]
-    private string newEmail = "";
-
-    [ObservableProperty]
-    private string newRole = "User";
-
-    public UserManagementViewModel()
+    private int totalSales;
+    public DashboardViewModel()
     {
-        LoadUsers();
+        LoadDashboardData();
     }
 
-    private void LoadUsers()
+    private void LoadDashboardData()
     {
         using var db = new AppDbContext();
 
-        Users = new ObservableCollection<User>(
-            db.Users.OrderBy(x => x.Username).ToList());
-    }
-
-    [RelayCommand]
-    private void AddUser()
-    {
-        if (string.IsNullOrWhiteSpace(NewUsername))
-            return;
-
-        using var db = new AppDbContext();
-
-        var user = new User
-        {
-            Username = NewUsername,
-            Password = NewPassword,
-            Email = NewEmail,
-            Role = NewRole
-        };
-
-        db.Users.Add(user);
-        db.SaveChanges();
-
-        LoadUsers();
-
-        NewUsername = "";
-        NewPassword = "";
-        NewEmail = "";
-    }
-
-    [RelayCommand]
-    private void DeleteUser()
-    {
-        if (SelectedUser == null)
-            return;
-
-        using var db = new AppDbContext();
-
-        var user = db.Users.Find(SelectedUser.Id);
-
-        if (user != null)
-        {
-            db.Users.Remove(user);
-            db.SaveChanges();
-        }
-
-        LoadUsers();
+        TotalProducts = db.Products.Count();
+        TotalUsers = db.Users.Count();
+        TotalSales = db.Sales.Count();
     }
 }

@@ -19,8 +19,8 @@ namespace EnterpriseInventory.WPF.Views
     /// <summary>
     /// Interaction logic for DashboardView.xaml
     /// </summary>
-    //public partial class ProductsView : UserControl
-    public partial class ProductsView : Page
+    public partial class ProductsView : UserControl
+    //public partial class ProductsView : Page
     {
         public ProductsView()
         {

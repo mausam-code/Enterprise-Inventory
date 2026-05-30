@@ -7,6 +7,7 @@ namespace EnterpriseInventory.WPF.Infrastructure
     {
         public DbSet<User> Users => Set<User>();
         public DbSet<Product> Products => Set<Product>();
+        public DbSet<Sales> Sales => Set<Sales>();
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
